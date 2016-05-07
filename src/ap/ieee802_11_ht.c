@@ -304,7 +304,7 @@ void hostapd_2040_coex_action(struct hostapd_data *hapd,
 	}
 	wpa_printf(MSG_DEBUG, "is_ht40_allowed=%d num_sta_ht40_intolerant=%d",
 		   is_ht40_allowed, iface->num_sta_ht40_intolerant);
-
+/* //<- disable frequency check (forece 40 Mhz)
 	if (!is_ht40_allowed &&
 	    (iface->drv_flags & WPA_DRIVER_FLAGS_HT_2040_COEX)) {
 		if (iface->conf->secondary_channel) {
@@ -329,6 +329,7 @@ void hostapd_2040_coex_action(struct hostapd_data *hapd,
 				   delay_time);
 		}
 	}
+*/
 }
 
 
