@@ -304,6 +304,7 @@ void hostapd_2040_coex_action(struct hostapd_data *hapd,
 	}
 	wpa_printf(MSG_DEBUG, "is_ht40_allowed=%d num_sta_ht40_intolerant=%d",
 		   is_ht40_allowed, iface->num_sta_ht40_intolerant);
+
 /* //<- disable frequency check (forece 40 Mhz)
 	if (!is_ht40_allowed &&
 	    (iface->drv_flags & WPA_DRIVER_FLAGS_HT_2040_COEX)) {
@@ -315,6 +316,7 @@ void hostapd_2040_coex_action(struct hostapd_data *hapd,
 			iface->conf->secondary_channel = 0;
 			ieee802_11_set_beacons(iface);
 		}
+*/
 		if (!iface->num_sta_ht40_intolerant &&
 		    iface->conf->obss_interval) {
 			unsigned int delay_time;
@@ -328,8 +330,7 @@ void hostapd_2040_coex_action(struct hostapd_data *hapd,
 				   "Reschedule HT 20/40 timeout to occur in %u seconds",
 				   delay_time);
 		}
-	}
-*/
+//	}
 }
 
 
